@@ -101,7 +101,7 @@ tornado==4.5.3
 traitlets==4.3.2
 ubuntu-drivers-common==0.0.0
 ufw==0.36
-urllib3==1.22
+urllib3==1.24.2
 vine==1.1.4
 virtualenv==16.7.7
 virtualenv-clone==0.5.3
