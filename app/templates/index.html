@@ -2,6 +2,7 @@
 
 
 {% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
     {% for post in posts %}
         <div>
             <p>Author: {{ post.author.username }}</p>
