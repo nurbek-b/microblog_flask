@@ -4,7 +4,7 @@ apt-clone==0.2.1
 apturl==0.5.2
 beautifulsoup4==4.6.0
 billiard==3.5.0.3
-bleach==2.1.2
+bleach==3.1.4
 boto3==1.10.34
 botocore==1.13.34
 Brlapi==0.6.6
