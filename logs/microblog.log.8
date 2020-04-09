@@ -1,4 +1,4 @@
-2020-04-06 19:40:01,712 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-06 19:28:10,505 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 23, in index
-    return render_template('index.html', title='Home', posts=posts, form=form)
-UnboundLocalError: local variable 'posts' referenced before assignment
-2020-04-06 19:40:07,729 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:28:10,891 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,10 +31,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 23, in index
-    return render_template('index.html', title='Home', posts=posts, form=form)
-UnboundLocalError: local variable 'posts' referenced before assignment
-2020-04-06 19:40:09,683 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:28:17,180 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
+2020-04-06 19:28:20,223 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -46,16 +51,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 23, in index
-    return render_template('index.html', title='Home', posts=posts, form=form)
-UnboundLocalError: local variable 'posts' referenced before assignment
-2020-04-06 19:41:25,581 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:12:51,024 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:16:27,948 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:22:39,254 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:32:05,374 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:49:11,425 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:49:15,011 ERROR: Exception on /explore [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:28:21,430 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -69,16 +70,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 144, in explore
-    page, app.config['POSTS_PER_PAGE'], False)
-KeyError: 'POSTS_PER_PAGE'
-2020-04-06 20:49:23,935 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:49:58,603 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 20:50:47,029 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 21:00:11,395 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-06 21:00:17,810 ERROR: Exception on /user/echo [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:29:08,923 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
+2020-04-06 19:29:11,460 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -92,30 +90,28 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 83, in user
-    next_url=next_url, prev_url=prev_url)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/user.html", line 24, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2020-04-06 21:02:29,413 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
-2020-04-07 19:16:36,427 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:22:26,052 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:25:49,776 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:30:27,427 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:44:40,918 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:29:13,942 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+Traceback (most recent call last):
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_post().all()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_post'
+2020-04-06 19:33:45,451 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 48]
