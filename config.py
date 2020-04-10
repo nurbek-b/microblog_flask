@@ -17,4 +17,5 @@ class Config(object):
     MAIL_USERNAME = environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = environ.get('MAIL_PASSWORD')
     ADMINS = ['foto.nurbek@gmail.com']
-    POSTS_PER_PAGE = 2
+    POSTS_PER_PAGE = 25
+    LANGUAGES = ['en', 'ru']

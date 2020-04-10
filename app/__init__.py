@@ -8,6 +8,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from flask_babel import Babel
+from flask import request
+from flask_babel import lazy_gettext as _l
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -16,6 +20,9 @@ db = SQLAlchemy(app)
 login = LoginManager(app)
 bootstrap = Bootstrap(app)
 login.login_view = 'login'
+login.login_message = _l("Please, login to access this page.")
+moment = Moment(app)
+babel = Babel(app)
 
 
 migrate = Migrate(app, db)
@@ -50,3 +57,8 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog')
 
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    # return 'ru'
