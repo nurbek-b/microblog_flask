@@ -1,7 +1,7 @@
 import os
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
-from flask import Flask
+from flask import Flask, current_app
 from flask_mail import Mail
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -17,7 +17,7 @@ mail = Mail()
 db = SQLAlchemy()
 login = LoginManager()
 bootstrap = Bootstrap()
-login.login_view = 'login'
+login.login_view = 'auth.login'
 login.login_message = _l("Please, login to access this page.")
 moment = Moment()
 babel = Babel()
@@ -79,7 +79,7 @@ def create_app(config_class=Config):
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
     # return 'ru'
 
 from app import models

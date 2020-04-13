@@ -1,4 +1,4 @@
-2020-04-07 19:44:44,669 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-07 19:45:47,260 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,7 +29,7 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
     {% block content %}
   File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
+    <!-- <a href="{{ url_for('reset_password_request') }}">Click to Reset</a> -->
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -41,7 +41,12 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:44:56,045 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-07 19:46:07,954 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-07 21:10:52,089 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-07 21:13:04,629 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-07 21:24:48,304 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 17:49:53,315 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 17:50:28,608 ERROR: Exception on /login [POST] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,37 +60,19 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 48, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:45:08,262 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:45:11,803 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 43, in login
+    if user is None or not user.check_password(form.password.data):
+  File "/home/nurbek/Desktop/microblog/app/models.py", line 34, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/security.py", line 218, in check_password_hash
+    if pwhash.count("$") < 2:
+AttributeError: 'NoneType' object has no attribute 'count'
+2020-04-08 17:53:49,511 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:02:04,597 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:02:42,366 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:04:53,197 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:05:46,298 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:05:50,999 ERROR: Exception on /login [POST] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,32 +86,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 48, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
+  File "/home/nurbek/Desktop/microblog/app/routes.py", line 43, in login
+    if user is None or not user.check_password(form.password.data):
+  File "/home/nurbek/Desktop/microblog/app/models.py", line 34, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/security.py", line 218, in check_password_hash
+    if pwhash.count("$") < 2:
+AttributeError: 'NoneType' object has no attribute 'count'
+2020-04-08 18:07:25,377 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:09:44,470 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:10:27,848 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-08 18:10:59,294 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]

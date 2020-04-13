@@ -1,6 +1,6 @@
 import jwt
 from time import time
-from app import db, login, app
+from app import db, login
 from hashlib import md5
 from datetime import datetime
 from werkzeug.security import (
