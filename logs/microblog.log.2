@@ -1,26 +1,4 @@
-2020-04-13 20:09:25,405 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
-Traceback (most recent call last):
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 52, in before_request
-    g.locale = str(get_locale())
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_babel/__init__.py", line 251, in get_locale
-    rv = babel.locale_selector_func()
-  File "/home/nurbek/Desktop/microblog/app/__init__.py", line 82, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
-2020-04-13 20:11:08,715 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:11:11,162 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:14:23,999 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,7 +31,8 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:13:34,642 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:18:25,232 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:18:27,891 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -86,8 +65,8 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:13:52,707 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:13:55,076 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:22:11,980 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:22:15,671 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -120,4 +99,4 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:14:20,818 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:29:08,052 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]

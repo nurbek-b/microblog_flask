@@ -4,9 +4,10 @@ from os import environ
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'ku7trwcbelsawuehniavuwefhiaukb'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATBASE_URL') or \
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS =  False
 
@@ -19,3 +20,6 @@ class Config(object):
     ADMINS = ['foto.nurbek@gmail.com']
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en', 'ru']
+
+    # ElsaticSearch configuration
+    ELASTICSEARCH_URL = environ.get('ELASTICSEARCH_URL')

@@ -79,6 +79,7 @@ def load_user(id):
 
 
 class Post(db.Model):
+    __searchable__ = ['body']
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(255))

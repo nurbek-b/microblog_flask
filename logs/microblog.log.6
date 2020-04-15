@@ -1,4 +1,4 @@
-2020-04-07 19:45:13,459 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-07 19:45:20,292 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -41,7 +41,8 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:45:15,426 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-07 19:45:41,073 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
+2020-04-07 19:45:44,198 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -72,7 +73,7 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
     {% block content %}
   File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
+    <!-- <a href="{{ url_for('reset_password_request') }}">Click to Reset</a> -->
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -84,7 +85,7 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:45:18,846 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-07 19:45:46,117 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -115,7 +116,7 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
     {% block content %}
   File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
+    <!-- <a href="{{ url_for('reset_password_request') }}">Click to Reset</a> -->
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error

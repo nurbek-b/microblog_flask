@@ -1,4 +1,4 @@
-2020-04-13 20:14:23,999 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:29:10,504 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -31,8 +31,8 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:18:25,232 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:18:27,891 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:34:02,767 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:34:05,598 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -65,8 +65,8 @@ Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:22:11,980 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:22:15,671 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:43:11,213 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:43:20,534 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -80,23 +80,45 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
-    base = expand_login_view(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
-    return url_for(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 26, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+NameError: name 'app' is not defined
+2020-04-13 20:45:17,449 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+Traceback (most recent call last):
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:29:08,052 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 26, in index
+    page, current_app.config['POSTS_PER_PAGE'], False)
+NameError: name 'app' is not defined
+2020-04-13 20:45:21,004 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-14 18:52:40,255 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 79]
+2020-04-14 18:55:20,167 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 79]
+2020-04-14 18:59:04,356 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 79]
+2020-04-14 19:03:17,808 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 78]
+2020-04-14 19:04:31,635 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 78]
+2020-04-14 19:05:15,948 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 78]
+2020-04-14 19:06:06,974 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 78]
+2020-04-14 19:10:34,860 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:13:05,941 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:13:20,794 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:17:48,152 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:18:14,498 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:22:49,065 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:23:06,737 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:23:19,035 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 19:39:17,307 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-14 20:02:41,071 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
