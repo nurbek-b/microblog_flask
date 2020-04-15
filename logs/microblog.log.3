@@ -1,26 +1,4 @@
-2020-04-13 20:09:25,405 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
-Traceback (most recent call last):
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 52, in before_request
-    g.locale = str(get_locale())
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_babel/__init__.py", line 251, in get_locale
-    rv = babel.locale_selector_func()
-  File "/home/nurbek/Desktop/microblog/app/__init__.py", line 82, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
-2020-04-13 20:11:08,715 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:11:11,162 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-15 20:32:00,265 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,14 +12,33 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
-    base = expand_login_view(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
-    return url_for(login_view)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 31, in index
+    next_url=next_url, prev_url=prev_url)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/nurbek/Desktop/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 12, in block "body"
+  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 25, in block "navbar"
+    <form class="navbar-form navbar-left" action="{{ url_for('main.search') }}" method="GET">
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -52,8 +49,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:13:34,642 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.search'. Did you mean 'main.user' instead?
+2020-04-15 20:52:57,006 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 80]
+2020-04-15 20:53:03,104 ERROR: Exception on /index [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -67,57 +65,33 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
-    base = expand_login_view(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
-    return url_for(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:13:52,707 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
-2020-04-13 20:13:55,076 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
-Traceback (most recent call last):
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
-    base = expand_login_view(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
-    return url_for(login_view)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2020-04-13 20:14:20,818 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/nurbek/Desktop/microblog/app/main/routes.py", line 31, in index
+    next_url=next_url, prev_url=prev_url)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/nurbek/Desktop/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 12, in block "body"
+  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 27, in block "navbar"
+    {{ g.search_form.q(size=20, class="form-control", placeholder=g.serach_form.q.label.text) }}
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'flask.ctx._AppCtxGlobals object' has no attribute 'serach_form'

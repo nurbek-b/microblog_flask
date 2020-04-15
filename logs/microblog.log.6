@@ -1,4 +1,4 @@
-2020-04-07 19:45:20,292 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+2020-04-13 20:14:23,999 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,24 +12,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 48, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset</a>
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -40,9 +30,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:45:41,073 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 50]
-2020-04-07 19:45:44,198 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-04-13 20:18:25,232 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:18:27,891 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,24 +46,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 48, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <!-- <a href="{{ url_for('reset_password_request') }}">Click to Reset</a> -->
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -84,8 +64,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2020-04-07 19:45:46,117 ERROR: Exception on /login [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-04-13 20:22:11,980 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
+2020-04-13 20:22:15,671 ERROR: Exception on / [GET] [in /home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py: 1891]
 Traceback (most recent call last):
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,24 +80,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/nurbek/Desktop/microblog/app/routes.py", line 48, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/nurbek/Desktop/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}
-  File "/home/nurbek/Desktop/microblog/app/templates/login.html", line 30, in block "content"
-    <!-- <a href="{{ url_for('reset_password_request') }}">Click to Reset</a> -->
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -127,4 +98,5 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/home/nurbek/Desktop/microblog/env/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-04-13 20:29:08,052 INFO: Microblog [in /home/nurbek/Desktop/microblog/app/__init__.py: 75]
